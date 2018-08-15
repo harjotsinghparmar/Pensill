@@ -3,6 +3,15 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose')
+
+// Define mongoose connection
+var db = 'mongodb://localhost:27017/mycustomers'
+mongoose.connect(db,(err)=>{
+  if(!err){
+    console.log("connected")
+  }
+})
 
 // Import routers 
 
