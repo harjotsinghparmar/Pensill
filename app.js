@@ -40,7 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/admin',professorRouter)
 app.use('/studies',studiesRouter)
-app.use('/jobs',jobsRouter)
+app.use('/opportunities',jobsRouter)
 app.use('/labs',labsRouter)
 
 
