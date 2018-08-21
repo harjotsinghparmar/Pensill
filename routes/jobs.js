@@ -6,11 +6,14 @@ var JobsListingController = require('../controllers/JobsController')
 */
 
 router.get('/',(req,res)=>{
-    res.redirect('/jobs/listing')
+    res.redirect('/listing/jobs')
 })
 
 router.get('/listing',JobsListingController.listing)
+//Listing page after search
+router.post('/listing',JobsListingController.listing_search)
 
+// Listing description page
 router.get('/listing/:id',JobsListingController.listing_description)
 
 

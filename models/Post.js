@@ -23,7 +23,7 @@ Add detailed description of the schema
    - Professor to reach out to 
   */
 
-var LabSchema = new Schema({
+var PostSchema = new Schema({
     title:{
         type: String
     },
@@ -40,8 +40,8 @@ var LabSchema = new Schema({
 
 // Define the virtual for the book post
 
-LabSchema.virtual('url').get(()=>{
+PostSchema.virtual('url').get(()=>{
     return '/posts/'+this._id
 })
 
-module.exports = mongoose.model('Post',LabSchema)
+module.exports = mongoose.model('Post',PostSchema)
