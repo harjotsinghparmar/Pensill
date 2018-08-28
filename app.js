@@ -22,6 +22,7 @@ var studiesRouter = require('./routes/studies')
 var jobsRouter = require('./routes/jobs')
 var professorRouter = require('./routes/admin')
 var labsRouter = require('./routes/labs')
+var facultyRouter = require('./routes/faculty')
 
 var app = express();
 
@@ -42,6 +43,7 @@ app.use('/admin',professorRouter)
 app.use('/studies',studiesRouter)
 app.use('/opportunities',jobsRouter)
 app.use('/labs',labsRouter)
+app.use('/faculty',facultyRouter)
 
 
 // catch 404 and forward to error handler
