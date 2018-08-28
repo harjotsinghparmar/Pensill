@@ -23,23 +23,14 @@ contains the
  */
 
 var ProfessorSchema = new Schema({
-    name:{
-        type: String
-    },
-    designation:{
-        type: String
-    },
-    contact:{
-        email:{
-            type:String
-        },
-        others:{
-            type:String
-        }
-    },
-    themes:{
-        type:[String]
-    }
+    name:String,
+    job_title:String,
+    email:String,
+    phone:String,
+    location: String,
+    profile_image:String,
+    research_interest:[String],
+    biography:String
 })
 
 // Define the virtual for the professor profile url, this is basically generated when requested
@@ -48,4 +39,4 @@ ProfessorSchema.virtual('url').get(()=>{
     return '/professor/'+this._id
 })
 
-module.exports = mongoose.model('Professor',LabSchema)
+module.exports = mongoose.model('Professor',ProfessorSchema)
