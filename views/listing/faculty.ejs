@@ -1,0 +1,26 @@
+<% include ../partials/navbar_students %>
+  <div class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 m-auto">
+          <form class="form" method="POST" action="/faculty/listing">
+            <div class="input-group">
+              <input type="text" class="form-control" name="search_query" placeholder="Try.. Image Processing">
+              <div class="input-group-append">
+                <button class="btn btn-dark" type="button">Search By Research Interest</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-2" >
+    <div class="container">
+      <div class="row">
+        <%- include('../partials/faculty_card',{list:list}); %>
+      </div>
+    </div>
+  </div>
+
+<% include ../partials/footer_students %>
