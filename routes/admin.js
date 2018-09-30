@@ -1,3 +1,6 @@
+// Import passport to use strategy 
+
+var passport = require('passport')
 var router = require('express').Router();
 var AdminController = require('../controllers/AdminController')
 
@@ -6,8 +9,18 @@ var AdminController = require('../controllers/AdminController')
 
 */
 
+var authCheck = (req,res,next)=>{
+  if(!req.user){
+      res.redirect('/auth/login')
+  }
+  else{
+      console.log(req.user)
+      next()
+  }
+}
 
-router.get('/',AdminController.admin)
+
+router.get('/', authCheck,AdminController.admin)
 // add job / study get request
 router.get('/jobs/add',AdminController.add_job_get)
 router.get('/study/add',AdminController.add_study_get)
@@ -25,8 +38,24 @@ router.get('/studies/edit/:id',AdminController.edit_study)
 
 
 // Router for wrong urls
+
+
+// Router for login 
+
+router.get('/login',(req,res)=>{
+    res.render("./admin/login")
+})
+
+router.post('/login',
+  passport.authenticate('local', {failureRedirect: '/' }),
+  function(req, res) {
+    req.logIn(user, function (err) {
+    console.log('login successfull for ',req.user)
+    res.redirect('/admin');});
+  });
+
 router.get('/*',(req,res)=>{
-    res.redirect('/admin')
+    res.redirect('/login')
 })
 
 module.exports = router

@@ -19,6 +19,7 @@
            </h5>
         <br>
         <div style="display: inline-block">
+            <% professor.research_interest = professor.research_interest.slice(1,6) %>
             <% professor.research_interest.forEach(function(interest){ %>
             <% if(interest.length >=24) {%>
               <% var interest = interest.substring(0,24)+"..." %>

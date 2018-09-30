@@ -5,6 +5,8 @@
 
  // Admin Page
 
+ 
+
  exports.admin = (req,res)=>{
      res.send(' You have reached your admin page')
  }
