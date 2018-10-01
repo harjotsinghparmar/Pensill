@@ -5,10 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="../stylesheets/style.css" type="text/css"> </head>
+  <link rel="stylesheet" href="../stylesheets/style.css" type="text/css"> 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-<body>
-  <nav class="navbar navbar-expand-md navbar-secondary bg-secondary">
+  <link rel="stylesheet" href="../stylesheets/overrides.css">
+
+</head>
+  <body>
+  <nav class="navbar navbar-expand-md navbar-secondary bg-primary">
     <div class="container">
       <a class="navbar-brand" href="/">
         <img src="../images/pensill.png" width="" height="40" class="d-inline-block align-top" alt="">
@@ -19,25 +22,27 @@
         </b>
       </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item text-dark pl-2 pr-2">
+          <li class="nav-item text-dark ov-nav-links ov-nav-links pl-2 pr-2">
             <a class="nav-link text-white" href="/opportunities/listing">
-              <b class="text-dark">Student Opportunities</b>
+              <b class="text-dark">Graduate Opportunities</b>
             </a>
           </li>
-          <li class="nav-item text-dark pl-2 pr-2">
-            <a class="nav-link text-dark" href="#">Research Studies</a>
+          <li class="nav-item text-dark ov-nav-links pl-2 pr-2">
+            <a class="nav-link text-dark" href="#">
+              <b class="text-dark">Paid Research Studies</b>
+            </a>
           </li>
-          <li class="nav-item text-dark pl-2 pr-2">
+          <li class="nav-item text-dark ov-nav-links pl-2 pr-2">
             <a class="nav-link text-white" href="/faculty/">
-              <b class="text-dark">Faculty</b>
+              <b class="text-dark">Faculty Directory</b>
             </a>
           </li>
         </ul>
-        <a class="btn btn-primary" href="/login">Login</a>
+        <a class="btn ov-btn-login" href="/login">Login</a>
       </div>
     </div>
   </nav>

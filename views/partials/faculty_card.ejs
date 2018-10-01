@@ -7,7 +7,7 @@
     <div class='image-container m-auto' style=" align-item:center;width: 50%;height:auto">
       <img class="card-img-top" style="height: 30%;" src="<%= professor.profile_image %>" alt="<% professor.name %>" >
       </div>
-      <div class="card-header "><h4 class="font-weight-bold"><%= professor.name %></h4>  
+      <div class="card-header "><h4 class="font-weight-bold professor-name"><%= professor.name %></h4>  
         <h6 class="text-muted"> <p><i class="fas fa-briefcase mr-2"></i><b>  </b><%= professor.job_title %></p></h6></div>
       <div class="card-body">
         
@@ -24,7 +24,7 @@
             <% if(interest.length >=24) {%>
               <% var interest = interest.substring(0,24)+"..." %>
             <% }%>
-            <span class="badge badge-pill badge-secondary"><a ><i class="fas fa-map-marker-alt mr-2"></i><%= interest %></a></span>
+            <span class="badge badge-pill badge-secondary"><a></i><%= interest %></a></span>
             <% }); %>
           </div>
 

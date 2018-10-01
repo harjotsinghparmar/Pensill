@@ -1,0 +1,30 @@
+.nav-link{
+    font-family: poppins;
+}
+
+.badge-secondary{
+    background-color: #f6af31;
+}
+
+.professor-name{
+    color: #555;
+}
+
+.ov-nav-links:hover{
+    border-bottom: 5px #f6af31 solid;
+}
+
+.ov-btn-login{
+    background-color: #f6af31;
+    color: white;
+    font-weight: 400;
+}
+
+.form-control:focus {
+    border-color: #6265e4 !important;
+    box-shadow: 0 0 5px rgba(98, 101, 228, 1) !important;
+  }
+
+  *{
+      box-sizing: border-box !important;
+  }

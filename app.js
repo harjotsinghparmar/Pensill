@@ -4,6 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose')
+require("./config/passport-setup")
+var passport = require("passport")
+var bodyParser = require('body-parser')
 
 // Define mongoose connection
 // local db connection var db = 'mongodb://localhost:27017/mycustomers'
@@ -35,6 +38,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Assign the routes with handlers
 
