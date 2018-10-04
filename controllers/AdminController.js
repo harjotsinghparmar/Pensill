@@ -4,27 +4,47 @@
  */
 
  // Admin Page
+// import DB 
+var Opportunity = require("../models/Post")
+
 
  
 
  exports.admin = (req,res)=>{
-     res.send(' You have reached your admin page')
+     res.render('admin/dashboard')
  }
+
+ // pages to display opportunities and research studies
+ exports.opportunities = (req,res)=>{
+Opportunity.find({}).then((data)=>{
+    console.log(data)
+    res.render('admin/opp',{opp: data})
+})
+    
+}
 
 // Add pages get request
 
 exports.add_job_get = (req,res)=>{
-    res.render('./admin/add_job')
+    res.render('admin/add_job')
 }
 
 exports.add_study_get = (req,res)=>{
-    res.render('./admin/add_study')
+    res.render('admin/add_study')
 }
 // Add pages post request
 
 exports.add_job_post = (req,res)=>{
-    res.render('./admin/add_job')
-}
+    console.log(req.body.title)
+    var opp = new Opportunity({
+        title: req.body.title,
+        description: req.body.op_description,
+        theme: req.body.op_keywords
+    })
+
+    opp.save().then(console.log("done saving"))
+
+    res.redirect("/admin/jobs")}
 
 exports.add_study_post = (req,res)=>{
     res.render('./admin/add_study')
