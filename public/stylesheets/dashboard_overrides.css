@@ -1,0 +1,64 @@
+.nav-link{
+    font-family: poppins;
+}
+
+.badge-secondary{
+    background-color: #f6af31;
+}
+
+.professor-name{
+    color: #555;
+}
+
+.ov-btn-login{
+    background-color: #f6af31;
+    color: white;
+    font-weight: 400;
+}
+
+.form-control:focus {
+    border-color: #6265e4 !important;
+    box-shadow: 0 0 5px rgba(98, 101, 228, 1) !important;
+  }
+
+  *{
+      box-sizing: border-box !important;
+  }
+
+  .main{
+      height: 100%;
+      display: grid;
+      grid-template-columns: 
+      minmax(200px, 300px) 1fr;
+  }
+
+  .sidebar{
+      background: white;
+  }
+
+ul{
+    list-style: none;
+    width: 100%;
+    display: inline;
+}
+li.sb{
+    width:100%;
+    display: block;
+    padding-left: 1em;
+    color: #555;
+    font-weight: 400;
+    font-family: poppins;
+    margin-left: 2em;
+}
+
+li.sb:hover{
+    border-left: #6265e4 solid 8px;
+}
+
+a{
+    text-decoration:none !important;
+}
+
+#grad_opp_description{
+
+}
