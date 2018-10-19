@@ -35,11 +35,10 @@ exports.add_study_get = (req,res)=>{
 // Add pages post request
 
 exports.add_job_post = (req,res)=>{
-    console.log(req.body.title)
     var opp = new Opportunity({
         title: req.body.title,
         description: req.body.op_description,
-        theme: req.body.op_keywords
+        theme: req.body.op_keywords.split(",")
     })
 
     opp.save().then(console.log("done saving"))
