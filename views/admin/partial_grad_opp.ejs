@@ -1,4 +1,4 @@
-<form action="/admin/jobs/add" method="post" class="grad_opp_form">
+<form action="/admin/jobs/add" method="POST" class="grad_opp_form">
 <div class="container-fluid mt-2"><div class="col-md-12"><div class="card">
 <div class="card-header">
   <strong>Opportunity Description</strong>
@@ -9,13 +9,21 @@
 <div class="form-group"> <label>Title<br></label>
 <input type="text" name="title" class="form-control" placeholder="Shortly Describe Your Opportunity">  </div>
 <div class="form-group"> <label>Submission Deadline<br></label>
-<input type="text" name="deadline"  class="form-control" placeholder=""> </div>
+<input class="form-control" name="submission_deadline" type="date" value="2018-08-19" id="example-datetime-local-input">
+</div>
+
 
 </div><div class="col-md-4">
 <div class="form-group"> <label>Opportunity Type<br></label>
-<input type="text" name="type" class="form-control" placeholder="">  </div>
-<div class="form-group"> <label>Funding</label>
-<input type="text" class="form-control" placeholder="Yes or No"> </div>
+<input type="text" name="opportunity_type" class="form-control" placeholder="MASc/ PHD etc..">  </div>
+
+<div class="form-group">
+    <label for="sel1">Funding Available? </label>
+    <select class="form-control" id="sel1" name="funding_availability">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
 
 </div><div class="col-md-4">
 <div class="form-group"> <label>Email Contact</label>
@@ -28,7 +36,7 @@
 </div>
 <div class="row">
 <div class="col-md-12"><div class="form-group"> <label>Description<br></label>
-<input type="text" name="op_description" class="form-control" id="grad_opp_description"  placeholder="Describe the opportunity and requirements">  </div></div>
+<textarea type="text" rows="5" name="op_description" class="form-control" id="grad_opp_description" placeholder="Describe the opportunity and requirements"> </textarea> </div></div>
 
 </div>
 <div class="row">
