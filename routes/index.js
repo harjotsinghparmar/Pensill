@@ -11,5 +11,9 @@ router.get('/login', function(req, res, next) {
   res.render('./general/login');
 });
 
+router.get('/tos', function(req,res,next){
+  res.render('./general/tos')
+})
+
 
 module.exports = router;
