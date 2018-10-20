@@ -4,7 +4,7 @@
 
 <div class="col-md-6 col-sm-12 py-2">
     <div class="card">
-      <div class="card-header"><h4><%= job.title %></h4>  </div>
+      <div class="card-header"><h4><%= job.title %></h4> </div>
       <div class="card-body">
         <h6 class="text-muted"> <p><%= job.description %></p></h6>
         <% job.theme.forEach(function(theme){ %>
@@ -12,6 +12,8 @@
         	<span class="badge badge-secondary"><%= theme %></span>
         </h5>
     <% }); %>
+        <br>
+        <a href="listing/<%= job.id %>">learn more</a>
       </div>
     </div>
   </div>

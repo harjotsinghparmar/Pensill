@@ -27,6 +27,9 @@ Jobs.find({theme:{$regex: query, $options:'i'}}).exec((err,data)=>{
 }
 
 exports.listing_description = (req,res)=>{
-    res.send(' You have reached jobs description page ')
+    var job_id = req.params.id
+    Jobs.find({_id:job_id}).exec((err,data)=>{
+        res.json(data)
+    })
 }
 
