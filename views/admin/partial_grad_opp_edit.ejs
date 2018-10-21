@@ -1,4 +1,4 @@
-<form action="/admin/jobs/add" method="POST" class="grad_opp_form">
+<form action="/admin/jobs/edit/<%= opportunity.id %>" method="POST" class="grad_opp_form">
 <div class="container-fluid mt-2"><div class="col-md-12"><div class="card">
 <div class="card-header">
   <strong>Opportunity Description</strong>
@@ -7,7 +7,7 @@
 <div class="card-body"><div class="row">
 <div class="col-md-4">
 <div class="form-group"> <label>Title<br></label>
-<input type="text" name="title" class="form-control" placeholder="Shortly Describe Your Opportunity">  </div>
+<input type="text" name="title" class="form-control" placeholder="" value="<%= opportunity.title %>"> </div>
 <div class="form-group"> <label>Submission Deadline<br></label>
 <input class="form-control" name="submission_deadline" type="date" value="2018-08-19" id="example-datetime-local-input">
 </div>
@@ -36,20 +36,20 @@
 </div>
 <div class="row">
 <div class="col-md-12"><div class="form-group"> <label>Description<br></label>
-<textarea type="text" rows="5" name="op_description" class="form-control" id="grad_opp_description" placeholder="Describe the opportunity and requirements"> </textarea> </div></div>
+<textarea type="text" rows="5" name="op_description" class="form-control" id="grad_opp_description" placeholder="Describe the opportunity and requirements" ><%= opportunity.description %> </textarea> </div></div>
 
 </div>
 <div class="row">
     <div class="col-md-12"><div class="form-group"> <label>Research Keywords<br></label>
-    <input type="text" name="op_keywords" class="form-control"   placeholder="">  </div></div>
+    <input type="text" name="op_keywords" class="form-control"   placeholder="" value=" <%= opportunity.theme.toString() %>"> </div></div>
     
     </div>
     <div class="row">
         <div class="col-md-12"><div class="form-group"> <label>Requirements<br></label>
-        <input type="text" name="op_requirements" class="form-control"   placeholder="">  </div></div>
+        <input type="text" name="op_requirements" class="form-control"   placeholder="" value="<%= opportunity.requirements.toString()%>">  </div></div>
         
         </div>
-        <button type="submit" class="btn btn-secondary" >Submit</button>
+        <button type="submit" class="btn btn-secondary" >Update</button>
         
 </div>
 </div></div></div>
