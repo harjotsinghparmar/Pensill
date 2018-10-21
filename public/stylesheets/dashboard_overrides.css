@@ -59,6 +59,10 @@ a{
     text-decoration:none !important;
 }
 
-#grad_opp_description{
-
+.profile_image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
 }
+
