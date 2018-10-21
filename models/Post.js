@@ -35,6 +35,9 @@ var PostSchema = new Schema({
     },
     expiry:{
         type:Date
+    },
+    requirements:{
+        type:[String]
     }
 })
 
