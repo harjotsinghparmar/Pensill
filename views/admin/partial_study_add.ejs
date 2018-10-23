@@ -1,0 +1,34 @@
+
+<div class="container bg-white mt-3 mx-auto p-2 w-75">
+    <div class="col-md-12">
+        <h4><strong>Add New Study</strong></h4>
+        <form action="/admin/study/add" class="py-2" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+        
+            <label><strong>Study Title</strong><br></label>
+            <input type="text" name="title" class="form-control"   placeholder="Prescription Design ..." value=""> 
+        </div>
+        <div class="form-group">
+                <label><strong>Renumeration</strong><br></label>
+                <input type="text" name="amount" class="form-control"   placeholder="$30/Hr" value=""> 
+        </div>
+        <label><strong>File Upload</strong><br></label>
+        <div class="custom-file form-group mb-3">
+            <input type="file" name="file" id="study_poster" class="custom-file-input">
+            <label for="file" class="custom-file-label">Choose a file..</label>
+        </div>
+        <input type="submit" class="btn btn-secondary" value="Submit">
+        </form>
+
+    </div>
+    </div>
+
+    <script type="application/javascript">
+        $('.custom-file-input').on('change', function() { 
+            let fileName = $(this).val().split('\\').pop(); 
+            $(this).next('.custom-file-label').addClass("selected").html(fileName); 
+         });
+    </script>
+
+</div>
+

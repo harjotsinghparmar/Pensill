@@ -1,0 +1,26 @@
+<% include ../partials/navbar_students %>
+  <div class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 m-auto">
+          <form class="form" method="POST" action="/opportunities/listing">
+            <div class="input-group">
+              <input type="text" class="form-control" name="search_query" placeholder="Try.. Machine Learning">
+              <div class="input-group-append">
+                <button class="btn btn-dark" type="button">Search</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-2" >
+    <div class="container">
+      <div class="row">
+        <%- include('../partials/studies_cards'); %>
+      </div>
+    </div>
+  </div>
+
+<% include ../partials/footer_students %>
