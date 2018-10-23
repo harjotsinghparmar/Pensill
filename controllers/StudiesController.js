@@ -1,7 +1,7 @@
 
 
 exports.listing = (req,res)=>{
-    res.send(' You have reached the studies listing page')
+    res.render('listing/study')
 }
 
 
