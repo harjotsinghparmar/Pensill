@@ -8,14 +8,14 @@
       <img class="card-img-top" style="height: 30%;" src="<%= professor.profile_image %>" alt="<% professor.name %>" >
       </div>
       <div class="card-header "><h4 class="font-weight-bold professor-name"><%= professor.name %></h4>  
-        <h6 class="text-muted"> <p><i class="fas fa-briefcase mr-2"></i><b>  </b><%= professor.job_title %></p></h6></div>
+      <h6 class="text-muted"> <%= professor.job_title %></h6></div>
       <div class="card-body">
         
-        <h5 style=" display: inline-block">
-         <span class="badge badge-pill"><a href="mailto:<%= professor.email %>"> <i class="fas fa-envelope mr-2"></i><%= professor.email %></a></span>
+        <h5 style="display: inline-block">
+         <span class="badge badge-pill mute-text"><a href="mailto:<%= professor.email %>"> <i class="fa fa-send pr-1" aria-hidden="true"></i> <%= professor.email %></a></span>
         </h5>
         <h5 style="display: inline-block">
-            <span class="badge badge-pill"><a ><i class="fas fa-map-marker-alt mr-2"></i><%= professor.location %></a></span>
+            <span class="badge badge-pill mute-text ml-3"><a href=""><i class="fas fa-map-marker-alt px-1"></i><%= professor.location %></a></span>
            </h5>
         <br>
         <div style="display: inline-block">
