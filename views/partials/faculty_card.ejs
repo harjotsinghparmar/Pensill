@@ -2,7 +2,7 @@
 
 <% list.forEach(function(professor){ %>
 
-<div class="col-md-6 col-sm-12 py-2">
+<div class="col-md-6 col-sl-6 col-xl-4 col-sm-12 py-2">
     <div class="card">
     <div class='image-container m-auto' style="align-item:center;width: 50%;height:auto">
       <img class="card-img-top" style="height: 30%;" src="<%= professor.profile_image %>" alt="<% professor.name %>" >
@@ -11,12 +11,14 @@
       <h6 class="text-muted"> <%= professor.job_title %></h6></div>
       <div class="card-body">
         
-        <h5 style="display: inline-block">
-         <span class="badge badge-pill mute-text"><a href="mailto:<%= professor.email %>"> <i class="fa fa-send pr-1" aria-hidden="true"></i> <%= professor.email %></a></span>
-        </h5>
-        <h5 style="display: inline-block">
-            <span class="badge badge-pill mute-text ml-3"><a href=""><i class="fas fa-map-marker-alt px-1"></i><%= professor.location %></a></span>
-           </h5>
+        <div class="row">
+        <div class="col-12"><h5 style="display: inline-block">
+        <span class="badge badge-pill mute-text"><a href="mailto:<%= professor.email %>"> <i class="fa fa-send pr-1" aria-hidden="true"></i> <%= professor.email %></a></span>
+        </h5></div>
+        <div class="col-12"><h5 style="display: inline-block">
+        <span class="badge badge-pill mute-text"><a href=""><i class="fas fa-map-marker-alt px-1"></i><%= professor.location %></a></span>
+        </h5></div>
+      </div>
         <br>
         <div style="display: inline-block">
             <% professor.research_interest = professor.research_interest.slice(1,6) %>
