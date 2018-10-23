@@ -1,16 +1,43 @@
 <div class="py-2 text-center bg-light">
         <div class="container">
-          <div class="row">
-            <div class="col-md-12"><a class="btn btn-primary ml-auto" href="/admin/jobs/add"> <i class="fa fa-plus-circle pr-2"></i> Add New Opportunity </a></div>
-          </div>
-          <div class="row"><div class="col-md-12 mt-2"><ul class="list-group">
-              <li class="list-group-item d-flex justify-content-between align-items-center text-center font-weight-bold"> Title <span>
-                Link
-              </span></li>
-        <% opp.forEach(function(data){ %>
-        <li class="list-group-item d-flex justify-content-between align-items-center"> <%= data.title.substring(0,50) %><span class="badge badge-secondary badge-pill pill-light"><a href="jobs/edit/<%= data.id %>">Edit</a></span></li>
-        <% }); %>
-        </ul></div></div>
           
+          <% if(typeof mssg!== 'undefined') {%>
+              <div class="alert alert-success" role="alert">
+                <strong>You successfully updated the listing!!</strong> 
+              </div>
+              <% }%>
+
+          <div class="container p-3 bg-white">
+                <div class="row">
+                        <div class="col-md-12 my-2"><a class="btn btn-primary float-right" href="/admin/jobs/add"> <i class="fa fa-plus-circle pr-2"></i> Add New Opportunity </a></div>
+                      </div>
+            <div class="table-responsive text-left">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Post Date</th>
+                    <th>Title</th>
+                    <th>Views</th>
+                    <th>Edit</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <% opp.forEach(function(data){ %>
+                    <tr>
+                        <td></td>
+                        <td class="truncate"><%= data.title %></td>
+                        <td></td>
+                        <td><span class="badge badge-secondary badge-pill pill-light"><a href="/admin/jobs/edit/<%= data.id %>">Edit</a></span></td>
+                    </tr>
+                    <% }); %>
+                </tbody>
+              </table>
+
+            </div>
+
+
+          </div>
+
+
         </div>
       </div>
