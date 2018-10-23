@@ -23,6 +23,7 @@
 
   *{
       box-sizing: border-box !important;
+;
   }
 
   .main{
@@ -66,3 +67,6 @@ a{
     margin-top: 50px;
 }
 
+body{
+    font-family: 'Poppins', sans-serif !important;
+}
