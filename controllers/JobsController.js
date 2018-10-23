@@ -7,11 +7,11 @@ Done
     
  */
 // import jobs data from databases
-var Jobs = require('../models/Post')
+var Opportunity = require('../models/Post')
 
 
 exports.listing = (req,res)=>{
-    Jobs.find({}).exec((err,data)=>{
+    Opportunity.find({}).exec((err,data)=>{
         res.render('listing/jobs',{job_list:data})
     })
 }
@@ -21,14 +21,14 @@ exports.listing = (req,res)=>{
 
 exports.listing_search = (req,res)=>{
 var query = req.body.search_query;
-Jobs.find({theme:{$regex: query, $options:'i'}}).exec((err,data)=>{
+Opportunity.find({theme:{$regex: query, $options:'i'}}).exec((err,data)=>{
     res.render('listing/jobs',{job_list:data})
 })
 }
 
 exports.listing_description = (req,res)=>{
     var job_id = req.params.id
-    Jobs.find({_id:job_id}).exec((err,data)=>{
+    Opportunity.find({_id:job_id}).exec((err,data)=>{
         res.json(data)
     })
 }
