@@ -2,7 +2,6 @@
 
 var router = require('express').Router();
 var passport = require("passport")
-var LocalStrategy = require("passport-local").Strategy
 var AdminController = require('../controllers/AdminController')
 var multer  = require('multer')
 var crypto = require('crypto')
@@ -46,42 +45,31 @@ var upload = multer({ storage: storage })
 */
 
 // passport setup local strategy
-passport.use(new LocalStrategy(
-    function(username, password, done) {
-        console.log('In local strategy')
-      User.findOne({ username: username }, function (err, user) {
-        if (err) { return done(err); }
-        if (!user) { return done(null, false); }
-        if (!user.verifyPassword(password)) { return done(null, false); }
-        return done(null, user);
-      });
-    }
-  ));
 
 
 
-router.get('/',AdminController.admin)
+router.get('/', AdminController.AuthCheck, AdminController.admin)
 
 
-router.get('/jobs',AdminController.opportunities)
-router.get('/study',AdminController.study)
+router.get('/jobs', AdminController.AuthCheck, AdminController.opportunities)
+router.get('/study',AdminController.AuthCheck, AdminController.study)
 
 
 // add job / study get request
-router.get('/jobs/add',AdminController.add_job_get)
-router.get('/study/add',AdminController.add_study_get)
+router.get('/jobs/add',AdminController.AuthCheck, AdminController.add_job_get)
+router.get('/study/add',AdminController.AuthCheck, AdminController.add_study_get)
 
 // add job/study post request
-router.post('/jobs/add',AdminController.add_job_post)
-router.post('/study/add',upload.single('file'),AdminController.add_study_post)
+router.post('/jobs/add',AdminController.AuthCheck, AdminController.add_job_post)
+router.post('/study/add',upload.single('file'),AdminController.AuthCheck, AdminController.add_study_post)
 
 // edit job/study post request
 
-router.get('/jobs/edit/:id',AdminController.edit_job)
-router.post('/jobs/edit/:id',AdminController.edit_job_post,AdminController.opportunities)
+router.get('/jobs/edit/:id',AdminController.AuthCheck, AdminController.edit_job)
+router.post('/jobs/edit/:id',AdminController.AuthCheck, AdminController.edit_job_post,AdminController.opportunities)
 
-router.get('/studies/edit/:id',AdminController.edit_study)
-router.post('/studies/edit/:id',AdminController.edit_study)
+router.get('/studies/edit/:id',AdminController.AuthCheck, AdminController.edit_study)
+router.post('/studies/edit/:id',AdminController.AuthCheck, AdminController.edit_study)
 
 
 
@@ -95,13 +83,12 @@ router.get('/login',(req,res)=>{
     res.render("./admin/login")
 })
 
-router.post('/login',
-(req,res)=>{
-    res.redirect('/admin/')
-})
+router.get('/logout',AdminController.logout)
+
+router.post('/login',AdminController.postLogin)
 
 router.get('/*',(req,res)=>{
-    res.redirect('/login')
+    res.redirect('/')
 })
 
 module.exports = router

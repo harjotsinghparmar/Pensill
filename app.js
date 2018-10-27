@@ -5,6 +5,11 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose')
 var bodyParser = require('body-parser')
+var passport = require('passport')
+const session = require('express-session');
+const flash = require('express-flash');
+var passportConfig = require("./config/passport")
+var expressValidator = require("express-validator")
 
 // Define mongoose connection
 // local db connection var db = 'mongodb://localhost:27017/mycustomers'
@@ -15,6 +20,8 @@ mongoose.connect(db,(err)=>{
     console.log("connected")
   }
 })
+// passport initialize 
+
 
 // Import routers 
 
@@ -26,6 +33,12 @@ var labsRouter = require('./routes/labs')
 var facultyRouter = require('./routes/faculty')
 
 var app = express();
+app.use(expressValidator());
+app.use(session({secret:'asdasasd'}))
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
