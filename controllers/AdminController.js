@@ -6,14 +6,59 @@
  // Admin Page
 // import DB 
 
+var passport = require('passport')
 var Opportunity = require("../models/Post")
 
 
- 
+exports.AuthCheck = (req,res,next)=>{
+    console.log("Checking Autherization", req.user)
+    if(!req.user){
+        res.redirect('/login')
+    }
+    res.locals.user = req.user
+    next()
+}
+
+
 
  exports.admin = (req,res)=>{
+     console.log('rendering admin page')
+     
      res.render('admin/dashboard')
  }
+
+// Login controller
+exports.postLogin = (req, res, next) => {
+    req.assert('password', 'Password cannot be blank').notEmpty();
+  
+    const errors = req.validationErrors();
+  
+    if (errors) {
+      return res.redirect('/login');
+    }
+  
+    passport.authenticate('local', (err, user, info) => {
+      if (err) { return next(err); }
+      if (!user) {
+        console.log('No such user')
+        return res.redirect('/login');
+      }
+      req.logIn(user, (err) => {
+        if (err) { return next(err); }
+        console.log("user successfully logged in")
+        res.redirect(req.session.returnTo || '/admin');
+      });
+    })(req, res, next);
+  };
+
+
+  // Login controller
+exports.logout = (req,res)=>{
+    console.log("You are logging out")
+    req.logout()
+    res.redirect('/')
+}
+
 
  // pages to display opportunities and research studies
  exports.opportunities = (req,res)=>{
