@@ -1,0 +1,44 @@
+<% include ../partials/navbar_students %>
+<div class="container my-3 description_container">
+    <div class="card p-2 text-left|center|right">
+      <div class="card-body">
+        <h4 class="card-title mb-3"><%= data.title %></h4>
+        <div class="description_meta text-gray f6 mb-1 d-flex flex-wrap">
+            <span class="mr-3"> <i class="fas fa-money-bill mr-2 "></i> <%= data.funding_amount %> </span>
+            <span class="mr-3"> For <%= data.candidate_type %> Candidates</span>
+            <span> Posted on <%= data.post_date.toLocaleDateString("en-US") %> </span>
+        </div>
+        <div class="description_meta text-gray f6 mb-4">
+            <a href="mailto:<%= data.contact_details %>"><span> <i class="fas fa-address-card  mr-2  "></i> Contact @ <strong><%= data.contact_details %></strong></span></a>
+            </div>
+
+        <h5 class="card-title"> About Project</h4>
+        <p class="card-text text-gray mb-5"> 
+            <%= data.description %>
+        </p>
+        
+
+        <h5 class="card-title"> Requirements/Skills</h4>
+            <p class="card-text text-gray mb-5"> 
+                <%= data.requirements %>
+            </p>
+            
+                   
+        <h5 class="card-title">
+                Keywords
+            </h5>
+            <% data.theme.forEach(function(theme){ %>
+                <span class="badge badge-pill badge-secondary"><%= theme %></span>
+
+            <% }); %>
+
+
+    </div>
+    </div>
+
+
+
+</div>
+
+
+<% include ../partials/footer_students %>
