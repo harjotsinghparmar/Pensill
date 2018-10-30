@@ -97,7 +97,12 @@ exports.add_job_post = (req,res)=>{
         title: req.body.title,
         description: req.body.op_description,
         theme: req.body.op_keywords.split(","),
-        requirements: req.body.op_requirements.split(",")
+        requirements: req.body.op_requirements.split(","),
+        deadline:req.body.deadline,
+        funding_available:req.body.funding_available,
+        funding_amount: req.body.funding_amount,
+        contact_details: req.body.contact_details,
+        candidate_type: req.body.candidate_type
     })
     
     opp.save().then(console.log("done saving"))
@@ -111,26 +116,29 @@ exports.add_study_post = (req,res)=>{
     res.json({file:req.file})
 }
 
-// Edit pages
-
+// Edit pages 
+// This is the get controller
 exports.edit_job = (req,res)=>{
     var job_id = req.params.id
     Opportunity.findById(job_id).exec((err,data)=>{
-        console.log(data)
         res.render('./admin/edit_job',{opportunity:data})
     })
 }
 exports.edit_job_post = (req,res)=>{
     var job_id = req.params.id
-    var update = {
+    var update =  {
         title: req.body.title,
         description: req.body.op_description,
         theme: req.body.op_keywords.split(","),
-        requirements: req.body.op_requirements.split(',')
+        requirements: req.body.op_requirements.split(","),
+        deadline:req.body.deadline,
+        funding_available:req.body.funding_available,
+        funding_amount: req.body.funding_amount,
+        contact_details: req.body.contact_details,
+        candidate_type: req.body.candidate_type
     }
 
     Opportunity.findByIdAndUpdate(job_id,update,{new:true},(err,data)=>{
-        console.log("data has been updated to")
         var mssg = "Opportunity successfully updated"
         res.redirect('/admin/jobs/?mssg='+mssg)
     })

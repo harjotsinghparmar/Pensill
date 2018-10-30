@@ -28,8 +28,8 @@ Opportunity.find({theme:{$regex: query, $options:'i'}}).exec((err,data)=>{
 
 exports.listing_description = (req,res)=>{
     var job_id = req.params.id
-    Opportunity.find({_id:job_id}).exec((err,data)=>{
-        res.json(data)
+    Opportunity.findById(job_id).exec((err,data)=>{
+        res.render('listing/jobs_description',{data:data})
     })
 }
 

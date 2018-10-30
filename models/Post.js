@@ -33,12 +33,30 @@ var PostSchema = new Schema({
     theme:{
         type:[String]
     },
-    expiry:{
-        type:Date
-    },
     requirements:{
         type:[String]
+    },
+    candidate_type:{
+        type: String
+    },
+    funding_amount:{
+        type:String
+    },
+    funding_available:{
+        type:String
+    },
+    post_date : {
+        type : Date, default : Date.now
+    }, 
+    contact_details:{
+        type:String
+    },
+    deadine:{
+        type:String
     }
+
+
+    
 })
 
 // Define the virtual for the book post
