@@ -8,7 +8,7 @@ mongoose.connect(db,(err)=>{
   }
 })
 
-for(x= 0; x< (list.length)-1;x++){
+for(x= 0; x< (list.length);x++){
     console.log(list[x].name)
     var prof = new Professors({
       name: list[x].name,
