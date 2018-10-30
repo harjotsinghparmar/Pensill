@@ -12,17 +12,17 @@
 <div class="form-group"> <label>Title<br></label>
 <input type="text" name="title" class="form-control" placeholder="" value="<%= opportunity.title %>"> </div>
 <div class="form-group"> <label>Submission Deadline<br></label>
-<input class="form-control" name="submission_deadline" type="date" value="2018-08-19" id="example-datetime-local-input">
+<input class="form-control" name="deadline" type="date" value="2018-08-19" id="example-datetime-local-input">
 </div>
 
 
 </div><div class="col-md-4">
 <div class="form-group"> <label>Opportunity Type<br></label>
-<input type="text" name="opportunity_type" class="form-control" placeholder="MASc/ PHD etc..">  </div>
+<input type="text" name="candidate_type" class="form-control" placeholder="MASc/ PHD etc.." value="<%= opportunity.candidate_type %>">  </div>
 
 <div class="form-group">
 <label for="sel1">Funding Available? </label>
-<select class="form-control" id="sel1" name="funding_availability">
+<select class="form-control" id="sel1" name="funding_available">
 <option>Yes</option>
 <option>No</option>
 </select>
@@ -30,16 +30,16 @@
 
 </div><div class="col-md-4">
 <div class="form-group"> <label>Email Contact</label>
-<input type="" name="contact"  class="form-control" placeholder="">  </div>
+<input type="" name="contact_details"  class="form-control" placeholder="" value=" <%= opportunity.contact_details %>"> </div>
 <div class="form-group"> <label>Funding Amount<br></label>
-<input type="" name="funding"  class="form-control" placeholder=""> </div>
+<input type="" name="funding_amount"  class="form-control" placeholder="" value="<%= opportunity.funding_amount %>" >  </div>
 
 </div>
 
 </div>
 <div class="row">
 <div class="col-md-12"><div class="form-group"> <label>Description<br></label>
-<textarea type="text" rows="5" name="op_description" class="form-control" id="grad_opp_description" placeholder="Describe the opportunity and requirements" ><%= opportunity.description %> </textarea> </div></div>
+<textarea type="text" rows="5" name="op_description" class="form-control" id="grad_opp_description" placeholder="Describe the opportunity and requirements" > <%= opportunity.description %></textarea> </div></div>
 
 </div>
 <div class="row">
