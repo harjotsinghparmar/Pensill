@@ -1,6 +1,6 @@
 var Users = require("./models/User")
 var mongoose = require("mongoose")
-var db = "mongodb://gear:satnam123@ds113942.mlab.com:13942/login"
+var db = "mongodb://gear:lol123123@lol123123.lolasd.com:13942/login"
 
 mongoose.connect(db,(err)=>{
   if(!err){

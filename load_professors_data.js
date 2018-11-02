@@ -1,7 +1,7 @@
 var Professors = require("./models/Professor")
 var mongoose = require("mongoose")
 var list = require('./syde_faculty')
-var db = "mongodb://gear:*****@ds113942.mlab.com:13942/login"
+var db = "mongodb://gear:*****@lol123123.lolasd.com:13942/login"
 mongoose.connect(db,(err)=>{
   if(!err){
     console.log("connected")

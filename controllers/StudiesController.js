@@ -4,7 +4,7 @@ var Study = require("../models/ResearchStudies")
 
 // @desc: Create connection with database
 
-var db = 'mongodb://gear:satnam123@ds113942.mlab.com:13942/login'
+var db = 'mongodb://gear:lol123123@lol123123.lolasd.com:13942/login'
 var conn = mongoose.createConnection(db)
 
 let gfs;

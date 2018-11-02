@@ -13,8 +13,8 @@ var expressValidator = require("express-validator")
 
 // Define mongoose connection
 // local db connection var db = 'mongodb://localhost:27017/mycustomers'
-// mlab db 
-var db = 'mongodb://gear:satnam123@ds113942.mlab.com:13942/login'
+// lolasd db 
+var db = 'mongodb://gear:lol123123@lol123123.lolasd.com:13942/login'
 mongoose.connect(db,(err)=>{
   if(!err){
     console.log("connected")
