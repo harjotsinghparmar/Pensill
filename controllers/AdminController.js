@@ -106,7 +106,8 @@ exports.add_job_post = (req,res)=>{
         funding_available:req.body.funding_available,
         funding_amount: req.body.funding_amount,
         contact_details: req.body.contact_details,
-        candidate_type: req.body.candidate_type
+        candidate_type: req.body.candidate_type,
+        status:req.body.status
     })
     
     opp.save().then(console.log("done saving"))
@@ -139,7 +140,8 @@ exports.edit_job_post = (req,res)=>{
         funding_available:req.body.funding_available,
         funding_amount: req.body.funding_amount,
         contact_details: req.body.contact_details,
-        candidate_type: req.body.candidate_type
+        candidate_type: req.body.candidate_type,
+        status: req.body.status
     }
 
     Opportunity.findByIdAndUpdate(job_id,update,{new:true},(err,data)=>{
@@ -160,6 +162,7 @@ exports.toggle_status = (req,res)=>{
 
         Opportunity.findByIdAndUpdate(job_id,{status:status},(err,data)=>{
             console.log(data.status)
+            res.redirect('/admin/jobs')
         })
     })
 }
