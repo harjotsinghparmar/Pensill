@@ -83,9 +83,7 @@ router.get('/jobs/toggle_status/:id', AdminController.AuthCheck, AdminController
 
 // Router for login 
 
-router.get('/login',(req,res)=>{
-    res.render("./admin/login")
-})
+router.get('/login',AdminController.LoginByPass)
 
 router.get('/logout',AdminController.logout)
 

@@ -23,6 +23,18 @@ exports.AuthCheck = (req,res,next)=>{
     
 }
 
+exports.LoginByPass = (req,res,next)=>{
+    console.log("Checking Autherization", req.user)
+    if(!req.user){
+        console.log("You don't have access")
+        res.render("./admin/login")
+    }
+    else{
+        res.locals.user = req.user
+        res.redirect('/admin')
+    }
+}
+
 
 
  exports.admin = (req,res)=>{
