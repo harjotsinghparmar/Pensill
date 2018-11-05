@@ -1,30 +1,32 @@
 
 
+<% studies.forEach(function(study){ %>
 
 <div class="col-md-6 col-sm-12 py-2">
         <div class="card shadow p-3 mb-5 bg-white rounded">
-         <img class="card-img-top" src="/images/study.jpg" alt="">
+         <img class="card-img-top" src="/studies/files/<%= study.img_url %>" alt="">
          <div class="card-body">
              <hr>
            <div class="row">
                <div class="col-8">
-                   <h4 class="card-title"><strong>Brain Computer Interface</strong></h4>
+                   <h4 class="card-title"><strong><%= study.title %></strong></h4>
                </div>
                <div class="col-4">
-                   <h4 class="card-title text-right" style="color: #318D3D"> <strong>$15/hr</strong></h4>
+                   <h4 class="card-title text-right" style="color: #318D3D"> <strong><%= study.amount %></strong></h4>
                </div>
            </div>
            <hr>
            <ul class="list-inline" style="font-size: 14px">
                 <li class="list-inline-item">
-                    <a name="" id="" class="" href="" role="button">Learn More</a>
+                    <a name="" id="" class="btn btn-secondary" href="/studies/files/<%= study.img_url %>" role="button">Learn More</a>
                 </li>
                 <div class="float-right" >
-                    <li class="list-inline-item text-muted"> <i class="fa fa-id-card" aria-hidden="true"></i>  Dr. Pensill</li>
+                    <li class="list-inline-item text-muted"> <i class="fa fa-id-card" aria-hidden="true"></i> Posted By Pensill</li>
                 </div>   
               </ul>
 
          </div>
        </div>
-
   </div>
+
+  <% }); %>

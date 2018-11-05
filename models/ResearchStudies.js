@@ -21,23 +21,16 @@ var ResearchSchema = new Schema({
     title:{
         type: String
     },
-    details:{
-        type: String
+    amount:{
+        type:String
     },
-    contact:{
-        email:{
-            type:String
-        },
-        others:{
-            type:String
-        }
-    },
+    img_url:{
+        type:String
+    }
+
 })
 
 // Define the virtual for the professor profile url, this is basically generated when requested
 
-ProfessorSchema.virtual('url').get(()=>{
-    return '/research_studies/'+this._id
-})
 
-module.exports = mongoose.model('Research',LabSchema)
+module.exports = mongoose.model('Research',ResearchSchema)

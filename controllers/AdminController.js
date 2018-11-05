@@ -8,7 +8,7 @@
 
 var passport = require('passport')
 var Opportunity = require("../models/Post")
-
+var Study = require('../models/ResearchStudies')
 
 exports.AuthCheck = (req,res,next)=>{
     console.log("Checking Autherization", req.user)
@@ -77,7 +77,8 @@ Opportunity.find({}).then((data)=>{
 exports.study = (req,res)=>{
     var mssg = req.query.mssg
     console.log(mssg)
-Opportunity.find({}).then((data)=>{
+Study.find({}).then((data)=>{
+    console.log(data)
     res.render('admin/study',{opp: data,mssg:mssg})
 }) 
 }
@@ -116,8 +117,17 @@ exports.add_job_post = (req,res)=>{
 
 exports.add_study_post = (req,res)=>{
     console.log("we are in the controller now")
-    console.log(req.body)
-    
+
+    var new_study = new Study({
+        title:req.body.title,
+        amount: req.body.amount,
+        img_url: req.file.filename
+
+    })
+    console.log(new_study)
+
+    new_study.save().then(
+        console.log("study was successfully saved"))
     res.json({file:req.file})
 }
 

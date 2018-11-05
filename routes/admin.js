@@ -22,8 +22,8 @@ var storage = new GridFsStorage({
         console.log(req.body)
         var title = req.body.title
         var amount = req.body.amount
-        const filename = title+'_'+amount+"_"+file.originalname+'.jpg';
-        console.log("file name is "+filename)
+        const filename =  buf.toString('hex');
+        console.log("file name is "+filename) 
         const fileInfo = {
           filename: filename,
           bucketName: 'uploads'

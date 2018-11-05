@@ -5,9 +5,16 @@ var StudiesListingController = require('../controllers/StudiesController')
 
 */
 
+
+
+
 router.get('/',(req,res)=>{
     res.redirect('/studies/listing')
 })
+
+
+router.get('/files', StudiesListingController.file_url )
+router.get('/files/:id', StudiesListingController.file_url_by_id )
 
 router.get('/listing',StudiesListingController.listing)
 
