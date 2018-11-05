@@ -139,8 +139,8 @@ exports.add_study_post = (req,res)=>{
     console.log(new_study)
 
     new_study.save().then(
-        console.log("study was successfully saved"))
-    res.json({file:req.file})
+        res.redirect('/admin/study')
+        )
 }
 
 // Edit pages 

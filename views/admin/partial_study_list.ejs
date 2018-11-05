@@ -1,55 +1,43 @@
+
+
 <div class="py-2 text-center bg-light">
-<div class="container card">
-<div class="row">
-</div>
+    <div class=" container my-2"><% if(typeof mssg!== 'undefined') {%>
+      <div class="alert alert-success" role="alert">
+      <strong>You successfully updated the listing!!</strong>
+      </div>
+      <% }%></div>
 
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+        <div class="container card ">
 
-<div class="container py-2 bg-white ">
-<div class="col-md-12 py-2">
-    <a class="btn btn-secondary float-right  my-2" href="/admin/study/add"> <i class="fa fa-plus-circle pr-2"></i> Add New Study </a>
-</div>
-<div class=" table-responsive text-left">
-    <table id="data_table" class=" table table-hover ">
-        <thead>
-          <tr border-none>
-            <th>Date Posted</th>
-            <th>Title</th>
-            <th>Status</th>
-            <th>Edit</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>24th Aug 2018</td>
-            <td>Image Processing</td>
-            <td><i class="fas fa-eye px-1"></i>244</td>
-            <td><span class="badge badge-pill badge-secondary">Edit</span></td>
-          </tr>
-          <tr>
-            <td>24th Aug 2018</td>
-              <td>Image Processing</td>
-              <td><i class="fas fa-eye px-1"></i>244</td>
-              <td><span class="badge badge-pill badge-secondary">Edit</span></td>
-            </tr>
-            <tr>
-              <td>24th Aug 2018</td>
-                <td>Image Processing</td>
-                <td><i class="fas fa-eye px-1"></i>244</td>
-                <td><span class="badge badge-pill badge-secondary">Edit</span></td>
-              </tr>
- 
-        </tbody>
-    </table> 
-  </div>
-</div>  
+          <div class="container p-3 bg-white">
+                <div class="row">
+                        <div class="col-md-12 my-2"><a class="btn btn-secondary float-right" href="/admin/study/add"> <i class="fa fa-plus-circle pr-2"></i> Add New Study </a></div>
+                      </div>
+            <div class="table-responsive text-left">
+              <table class="table table-hover" id="job_table">
+                <thead>
+                  <tr>
+                    <th>Post Date</th>
+                    <th>Title</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <% opp.forEach(function(data){ %>
+                    <tr>
+                        <td><%= data.post_date.toLocaleDateString("en-US") %></td>
+                        <td class="truncate"><%= data.title %></td>
+                        <td><%= data.amount %></td>
+                    </tr>
+                    <% }); %>
+                </tbody>
+              </table>
 
-<script>
-    $(document).ready(function() {
-      $('#data-table').DataTable();
-  } );
-</script>
+            </div>
 
 
-</div>
-</div>
+          </div>
+
+
+        </div>
+      </div>

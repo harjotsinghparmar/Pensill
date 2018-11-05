@@ -26,7 +26,10 @@ var ResearchSchema = new Schema({
     },
     img_url:{
         type:String
-    }
+    },
+    post_date : {
+        type : Date, default : Date.now
+    } 
 
 })
 
