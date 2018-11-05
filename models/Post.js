@@ -53,6 +53,9 @@ var PostSchema = new Schema({
     },
     deadine:{
         type:String
+    },
+    status:{
+        type:String, default:'active'
     }
 
 

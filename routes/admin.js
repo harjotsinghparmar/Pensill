@@ -71,10 +71,14 @@ router.post('/jobs/edit/:id',AdminController.AuthCheck, AdminController.edit_job
 router.get('/studies/edit/:id',AdminController.AuthCheck, AdminController.edit_study)
 router.post('/studies/edit/:id',AdminController.AuthCheck, AdminController.edit_study)
 
+// router to make a study inactive
+
+router.get('/jobs/toggle_status/:id', AdminController.AuthCheck, AdminController.toggle_status )
 
 
 
 // Router for wrong urls
+
 
 
 // Router for login 

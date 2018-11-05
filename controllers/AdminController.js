@@ -13,10 +13,14 @@ var Opportunity = require("../models/Post")
 exports.AuthCheck = (req,res,next)=>{
     console.log("Checking Autherization", req.user)
     if(!req.user){
+        console.log("You don't have access")
         res.redirect('/login')
     }
-    res.locals.user = req.user
-    next()
+    else{
+        res.locals.user = req.user
+        next()
+    }
+    
 }
 
 
@@ -52,7 +56,7 @@ exports.postLogin = (req, res, next) => {
   };
 
 
-  // Login controller
+  // Logout controller
 exports.logout = (req,res)=>{
     console.log("You are logging out")
     req.logout()
@@ -141,6 +145,22 @@ exports.edit_job_post = (req,res)=>{
     Opportunity.findByIdAndUpdate(job_id,update,{new:true},(err,data)=>{
         var mssg = "Opportunity successfully updated"
         res.redirect('/admin/jobs/?mssg='+mssg)
+    })
+}
+
+exports.toggle_status = (req,res)=>{
+    var job_id = req.params.id
+    Opportunity.findById(job_id).exec((err,data)=>{
+        if(data.status==="active"){
+            var status = "inactive"
+        }
+        else{
+            var status = "active"
+        }
+
+        Opportunity.findByIdAndUpdate(job_id,{status:status},(err,data)=>{
+            console.log(data.status)
+        })
     })
 }
 
