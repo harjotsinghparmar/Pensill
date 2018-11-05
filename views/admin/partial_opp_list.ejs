@@ -14,12 +14,12 @@
                         <div class="col-md-12 my-2"><a class="btn btn-secondary float-right" href="/admin/jobs/add"> <i class="fa fa-plus-circle pr-2"></i> Add New Opportunity </a></div>
                       </div>
             <div class="table-responsive text-left">
-              <table class="table table-hover">
+              <table class="table table-hover" id="job_table">
                 <thead>
                   <tr>
                     <th>Post Date</th>
                     <th>Title</th>
-                    <th>Views</th>
+                    <th>Status</th>
                     <th>Edit</th>
                   </tr>
                 </thead>
@@ -28,7 +28,7 @@
                     <tr>
                         <td><%= data.post_date.toLocaleDateString("en-US") %></td>
                         <td class="truncate"><%= data.title %></td>
-                        <td></td>
+                        <td><%= data.status %></td>
                         <td><span class="badge badge-secondary badge-pill pill-light"><a href="/admin/jobs/edit/<%= data.id %>">Edit</a></span></td>
                     </tr>
                     <% }); %>
