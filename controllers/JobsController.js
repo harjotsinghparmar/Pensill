@@ -11,7 +11,7 @@ var Opportunity = require('../models/Post')
 
 
 exports.listing = (req,res)=>{
-    Opportunity.find({}).exec((err,data)=>{
+    Opportunity.find({status:'active'}).exec((err,data)=>{
         res.render('listing/jobs',{job_list:data})
     })
 }
@@ -21,7 +21,7 @@ exports.listing = (req,res)=>{
 
 exports.listing_search = (req,res)=>{
 var query = req.body.search_query;
-Opportunity.find({theme:{$regex: query, $options:'i'}}).exec((err,data)=>{
+Opportunity.find({theme:{$regex: query, $options:'i'},status:'active'}).exec((err,data)=>{
     res.render('listing/jobs',{job_list:data})
 })
 }
