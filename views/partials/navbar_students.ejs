@@ -65,7 +65,12 @@
             </a>
           </li>
         </ul>
-        <a class="btn ov-btn-login" href="/admin/login">Login</a>
+        <% if(typeof(user)!= 'undefined'){ %>
+          <a class="btn ov-btn-login" href="/admin/login">Admin</a>
+        <% } else {%>
+
+        <a class="btn ov-btn-login" href="/admin/login"> Faculty Login</a>
+        <% } %>
       </div>
     </div>
   </nav>
