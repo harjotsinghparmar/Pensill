@@ -4,24 +4,23 @@
 
 <div class="col-md-6 col-sm-12 py-2">
         <div class="card shadow p-3 mb-5 bg-white rounded">
+            <div class="row">
+                <div class="col-8">
+                    <h5 class="card-title"><strong><%= study.title %></strong></h5>
+                </div>
+                <div class="col-4">
+                    <p class="card-title text-right" style="color: #318D3D"> <strong><%= study.amount %></strong></p>
+                </div>
+            </div>
          <img class="card-img-top" src="/studies/files/<%= study.img_url %>" alt="">
          <div class="card-body">
              <hr>
-           <div class="row">
-               <div class="col-8">
-                   <p class="card-title"><strong><%= study.title %></strong></p>
-               </div>
-               <div class="col-4">
-                   <p class="card-title text-right" style="color: #318D3D"> <strong><%= study.amount %></strong></p>
-               </div>
-           </div>
-           <hr>
            <ul class="list-inline" style="font-size: 14px">
                 <li class="list-inline-item">
-                    <a name="" id="" class="btn btn-secondary" href="/studies/files/<%= study.img_url %>" role="button">Learn More</a>
+                    <a name="" id="" class="font-weight-bold" href="/studies/files/<%= study.img_url %>" role="button">Learn More</a>
                 </li>
                 <div class="float-right" >
-                    <li class="list-inline-item text-muted"> <i class="fa fa-id-card" aria-hidden="true"></i> Posted By Pensill</li>
+                    <li class="list-inline-item text-muted"> <i class="fa fa-id-card" aria-hidden="true"></i> By Pensill</li>
                 </div>   
               </ul>
 
