@@ -30,6 +30,9 @@ color: #98002e;
  
 }
 
+.nvarbar-border{
+  border-bottom: solid 3px #f3f3f3;
+}
 
 
 .form-control:focus {

@@ -25,6 +25,11 @@
   color: white;
  
 }
+
+.navbar-border{
+  border-bottom: solid 5px #f3f3f3;
+}
+
 .color-red{
 color: #98002e;
  
