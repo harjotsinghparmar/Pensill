@@ -14,11 +14,23 @@
     color: #555;
 }
 
+
 .ov-btn-login{
     background-color: #f6af31;
     color: white;
     font-weight: 400;
 }
+.bg-yellow{
+  background-color: #f6af31;
+  color: white;
+ 
+}
+.color-red{
+color: #98002e;
+ 
+}
+
+
 
 .form-control:focus {
     border-color: #6265e4 !important;
