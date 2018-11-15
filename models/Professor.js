@@ -30,7 +30,8 @@ var ProfessorSchema = new Schema({
     location: String,
     profile_image:String,
     research_interest:[String],
-    biography:String
+    biography:String,
+    department: String
 })
 
 // Define the virtual for the professor profile url, this is basically generated when requested
