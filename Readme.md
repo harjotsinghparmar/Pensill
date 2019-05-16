@@ -6,11 +6,11 @@
 
 ### Faculty Directory
 ******
-Search for faculty members based on your domain of interest. \s
+Search for faculty members based on your domain of interest. 
 ![GIF](decent_res.gif)  
 
 ### Project Description Page
 *******
-Get detailed information about the projects and fundings. \s
+Get detailed information about the projects and fundings. 
 ![Screenshot](description_page.png)
 
