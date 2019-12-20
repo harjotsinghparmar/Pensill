@@ -1,6 +1,6 @@
 # Pensill 
 ******
-[Pensill](http://www.pensill.space) makes it easy to find research opportunities.
+[Pensill](http://pensill.herokuapp.com/) makes it easy to find research opportunities.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![GIF](ss.png)  
 
